@@ -11,7 +11,8 @@ const ComplaintSchema = new mongoose.Schema({
     },
     type:{
         enum:["B&R","E&N"],
-        
+        type:String,
+        required:true
     },
     description:{
         type:String,

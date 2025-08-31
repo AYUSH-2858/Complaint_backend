@@ -5,8 +5,8 @@ import jwt from "jsonwebtoken"; // Make sure to install this package
 const getComplaint = async (req, res) => {
     try {
         console.log(req.body)
-        const { name, address, title, description } = req.body;
-        const complaint = new ComplaintModel({ name, address, title, description });
+        const { name, address, type, description } = req.body;
+        const complaint = new ComplaintModel({ name, address, type, description });
         await complaint.save();
         res.status(201).json({ message: "Complaint saved", complaint });
     } catch (error) {
