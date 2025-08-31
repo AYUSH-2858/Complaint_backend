@@ -1,6 +1,7 @@
 import {connectDB} from "./db/db.js";
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { fetch_Complaints, getComplaint, login } from "./controller/Complaint.controller.js";
 import cookieParser from "cookie-parser";
 import auth from "./middleware/auth.js";
