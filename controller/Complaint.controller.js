@@ -27,7 +27,7 @@ const fetch_Complaints = async (req, res) => {
 const login = async (req, res) => {
     const { username, password } = req.body;
     try {
-        if (username !== "admin" || password !== "MES@1064") {
+        if (username !== "Geafarjangarh" || password !== "MES@2858") {
             return res.status(401).json({ success: false });
         }
         // Generate JWT token
