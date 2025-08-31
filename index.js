@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 
 app.post("/add", getComplaint);
-app.get("/fetch",auth, fetch_Complaints);
+app.get("/fetch", fetch_Complaints);
 app.post("/login", login);
 
 app.listen(PORT, () => { 
