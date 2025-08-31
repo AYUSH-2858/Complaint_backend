@@ -8,6 +8,7 @@ import auth from "./middleware/auth.js";
 dotenv.config();
 
 const app = express();
+app.use(cors({ origin: true, credentials: true }));
 const PORT = process.env.PORT || 5000;
 connectDB();
 
