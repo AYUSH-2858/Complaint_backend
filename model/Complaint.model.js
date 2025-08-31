@@ -10,7 +10,7 @@ const ComplaintSchema = new mongoose.Schema({
         required:true
     },
     type:{
-        enum:["B&R","E&N"],
+        enum:["B&R","E&M"],
         type:String,
         required:true
     },
