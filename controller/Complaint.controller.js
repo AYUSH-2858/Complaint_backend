@@ -32,7 +32,7 @@ const login = async (req, res) => {
         }
         // Generate JWT token
         const token = jwt.sign({ username }, process.env.JWT_SECRET, { expiresIn: "1d" });
-        res.cookie("token", token, { httpOnly: true, maxAge: 86400000 });
+        res.cookie("token", token, { httpOnly: true, maxAge: 86400000, sameSite: 'lax' });
         res.json({ success: true });
     } catch (error) {
         res.status(500).json({ error: error.message });
