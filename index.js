@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.post("/add", getComplaint);
 app.get("/fetch", fetch_Complaints);
 app.post("/login", login);
-app.delete("/delete", deleteComplaint);
+app.post("/delete", deleteComplaint);
 
 app.listen(PORT, () => { 
     console.log(`Server is running on port ${PORT}`);
