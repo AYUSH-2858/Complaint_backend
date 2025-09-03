@@ -39,5 +39,19 @@ const login = async (req, res) => {
     }
 }
 
-export { getComplaint,fetch_Complaints,login }
+
+const deleteComplaint = async (req, res) => {
+    try {
+        const { ids } = req.body;
+        if (!Array.isArray(ids) || ids.length === 0) {
+            return res.status(400).json({ error: "No IDs provided" });
+        }
+        const result = await ComplaintModel.deleteMany({ _id: { $in: ids } });
+        res.status(200).json({ message: "Complaints deleted", deletedCount: result.deletedCount });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+export { getComplaint,fetch_Complaints,login,deleteComplaint }
 
